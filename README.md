@@ -1,9 +1,11 @@
 # go-http-error
-go-http-error provides pretty formatted GCP-like http error responses.
+go-http-error provides GCP-like pretty formatted http error responses.
 
 
 ## Usage
 ```go
+import "github.com/amaya382/go-http-error"
+
 errRes := httperror.NewHTTPErr(httperror.InvalidArgument,
 	httperror.NewInnerErr("fooService", "invalidArgument", "id", "requestBody", "Passed id is invalid"),
 	httperror.NewInnerErr("fooService", "invalidArgument", "name", "requestBody", "Passed name is invalid"))
