@@ -143,13 +143,13 @@ import (
 	"io" // For illustration
 )
 
-	var c *gin.Context // Use a context from handlers
+var c *gin.Context // Use a context from handlers
 
-  // Status Code: 400
-  // Header: Content-Type:application/json
-  // Body: {error json}
-	xgin.SetHTTPErrJSON(c, xerrorz.InvalidArgument,
-		xerrorz.NewInnerErr("fooService", "invalidArgument", "id", "requestBody", "Passed id is invalid", nil),
-		xerrorz.NewInnerErr("fooService", "invalidArgument", "name", "requestBody", "Passed name is invalid",
-			io.ErrNoProgress))
+// Status Code: 400
+// Header: Content-Type:application/json
+// Body: {error json}
+xgin.SetHTTPErrJSON(c, xerrorz.InvalidArgument,
+	xerrorz.NewInnerErr("fooService", "invalidArgument", "id", "requestBody", "Passed id is invalid", nil),
+	xerrorz.NewInnerErr("fooService", "invalidArgument", "name", "requestBody", "Passed name is invalid",
+		io.ErrNoProgress))
 ```
