@@ -1,7 +1,6 @@
 package xgin
 
 import (
-	"fmt"
 	"io"
 	"net/http/httptest"
 	"testing"
@@ -10,24 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"golang.org/x/xerrors"
 )
-
-func TestSetHTTPErr(t *testing.T) {
-	gin.SetMode(gin.TestMode)
-	w := httptest.NewRecorder()
-	c, _ := gin.CreateTestContext(w)
-
-	SetHTTPErr(c, xerrorz.NotFound, xerrorz.NewInnerErr(
-		"fooService", "invalidArgument", "id",
-		"requestBody", "Passed id is invalid"))
-
-	bs := []byte{}
-	res, err := c.Writer.Write(bs)
-	if err != nil {
-		fmt.Println(err.Error())
-	}
-	fmt.Println(res)
-	fmt.Println(string(bs))
-}
 
 func TestSetHTTPErrJSON0(t *testing.T) {
 	gin.SetMode(gin.TestMode)

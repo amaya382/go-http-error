@@ -2,7 +2,6 @@ package xerrorz
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"reflect"
 	"testing"
@@ -45,8 +44,6 @@ func TestJSONEquality0(t *testing.T) {
 	if err != nil {
 		t.Fatal("Failed to marshal an err object")
 	}
-
-	fmt.Printf("%+v\n", errRes)
 
 	var o1, o2 interface{}
 	err = json.Unmarshal(bJSON, &o1)
