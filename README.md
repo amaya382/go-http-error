@@ -10,7 +10,7 @@ xerrorz has helper functions specialized for several web frameworks
 
 
 ## Error Contents
-You can pick up from preset errors for top-level http error contents (`HTTPErrDoc`). See [ErrType](https://github.com/amaya382/xerrorz/blob/feat/xerrorz/xerrorz.go#L130)
+You can pick up from preset errors for top-level http error contents (`HTTPErrDoc`). See [ErrType](https://github.com/amaya382/xerrorz/blob/master/xerrorz.go#L130)
 
 ```go
 type HTTPErr struct {
